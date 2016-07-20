@@ -24,8 +24,12 @@ public class GetFlickrJsonData extends GetRawData{
         createAndUpdateUri(searchCriteria, matchAll);
     }
 
+    public List<Photo> getMPhotos() {
+        return mPhotos;
+    }
+
     public void execute() {
-        super.setmRawUrl(mDestinationUri.toString());
+        //super.setmRawUrl(mDestinationUri.toString());
         Log.v(LOG_TAG, "Built Uri: " +mDestinationUri.toString());
 
         DownloadJsonData downloadJsonData = new DownloadJsonData();
@@ -101,6 +105,7 @@ public class GetFlickrJsonData extends GetRawData{
     public class DownloadJsonData extends DownloadRawData {
         @Override
         protected String doInBackground(String... params) {
+            //String[] par = {mDestinationUri.toString()};
             return super.doInBackground(params);
         }
 
